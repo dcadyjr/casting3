@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_name: MyString
+  production_co: MyString
+  roles: MyString
+  director: MyString
+
+two:
+  project_name: MyString
+  production_co: MyString
+  roles: MyString
+  director: MyString

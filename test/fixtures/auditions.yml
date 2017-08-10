@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  attended: false
+  time: MyString
+  actor: one
+  role: one
+
+two:
+  attended: false
+  time: MyString
+  actor: two
+  role: two

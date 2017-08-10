@@ -1,0 +1,147 @@
+<%= form_with(model: actor, local: true) do |form| %>
+  <% if actor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(actor.errors.count, "error") %> prohibited this actor from being saved:</h2>
+
+      <ul>
+      <% actor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :actor_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :actor_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :actor_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_digest %>
+    <%= form.text_field :password_digest, id: :actor_password_digest %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_url %>
+    <%= form.text_field :image_url, id: :actor_image_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tel_no %>
+    <%= form.text_field :tel_no, id: :actor_tel_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :street_address %>
+    <%= form.text_field :street_address, id: :actor_street_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :actor_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state, id: :actor_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zip_code %>
+    <%= form.text_field :zip_code, id: :actor_zip_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :agent %>
+    <%= form.text_field :agent, id: :actor_agent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :union %>
+    <%= form.check_box :union, id: :actor_union %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ht_feet %>
+    <%= form.number_field :ht_feet, id: :actor_ht_feet %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ht_inches %>
+    <%= form.number_field :ht_inches, id: :actor_ht_inches %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.number_field :weight, id: :actor_weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :eye_color %>
+    <%= form.text_field :eye_color, id: :actor_eye_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hair_color %>
+    <%= form.text_field :hair_color, id: :actor_hair_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shoe_size %>
+    <%= form.text_field :shoe_size, id: :actor_shoe_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender, id: :actor_gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ethnicity %>
+    <%= form.text_field :ethnicity, id: :actor_ethnicity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dob %>
+    <%= form.text_field :dob, id: :actor_dob %>
+  </div>
+
+  <div class="field">
+    <%= form.label :suit_size %>
+    <%= form.text_field :suit_size, id: :actor_suit_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dress_size %>
+    <%= form.text_field :dress_size, id: :actor_dress_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shirt_size %>
+    <%= form.text_field :shirt_size, id: :actor_shirt_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :waist %>
+    <%= form.number_field :waist, id: :actor_waist %>
+  </div>
+
+  <div class="field">
+    <%= form.label :inseam %>
+    <%= form.number_field :inseam, id: :actor_inseam %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

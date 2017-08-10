@@ -1,0 +1,37 @@
+<%= form_with(model: audition, local: true) do |form| %>
+  <% if audition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(audition.errors.count, "error") %> prohibited this audition from being saved:</h2>
+
+      <ul>
+      <% audition.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :attended %>
+    <%= form.check_box :attended, id: :audition_attended %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time %>
+    <%= form.text_field :time, id: :audition_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :actor_id %>
+    <%= form.text_field :actor_id, id: :audition_actor_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :role_id %>
+    <%= form.text_field :role_id, id: :audition_role_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

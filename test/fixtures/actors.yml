@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  password_digest: MyString
+  image_url: MyString
+  tel_no: MyString
+  street_address: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  agent: MyString
+  union: false
+  ht_feet: 1
+  ht_inches: 1
+  weight: 1
+  eye_color: MyString
+  hair_color: MyString
+  shoe_size: MyString
+  gender: MyString
+  ethnicity: MyString
+  dob: MyString
+  suit_size: MyString
+  dress_size: MyString
+  shirt_size: MyString
+  waist: 1
+  inseam: 1
+
+two:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  password_digest: MyString
+  image_url: MyString
+  tel_no: MyString
+  street_address: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  agent: MyString
+  union: false
+  ht_feet: 1
+  ht_inches: 1
+  weight: 1
+  eye_color: MyString
+  hair_color: MyString
+  shoe_size: MyString
+  gender: MyString
+  ethnicity: MyString
+  dob: MyString
+  suit_size: MyString
+  dress_size: MyString
+  shirt_size: MyString
+  waist: 1
+  inseam: 1

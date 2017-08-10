@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Actors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Password digest</th>
+      <th>Image url</th>
+      <th>Tel no</th>
+      <th>Street address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip code</th>
+      <th>Agent</th>
+      <th>Union</th>
+      <th>Ht feet</th>
+      <th>Ht inches</th>
+      <th>Weight</th>
+      <th>Eye color</th>
+      <th>Hair color</th>
+      <th>Shoe size</th>
+      <th>Gender</th>
+      <th>Ethnicity</th>
+      <th>Dob</th>
+      <th>Suit size</th>
+      <th>Dress size</th>
+      <th>Shirt size</th>
+      <th>Waist</th>
+      <th>Inseam</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @actors.each do |actor| %>
+      <tr>
+        <td><%= actor.first_name %></td>
+        <td><%= actor.last_name %></td>
+        <td><%= actor.email %></td>
+        <td><%= actor.password_digest %></td>
+        <td><%= actor.image_url %></td>
+        <td><%= actor.tel_no %></td>
+        <td><%= actor.street_address %></td>
+        <td><%= actor.city %></td>
+        <td><%= actor.state %></td>
+        <td><%= actor.zip_code %></td>
+        <td><%= actor.agent %></td>
+        <td><%= actor.union %></td>
+        <td><%= actor.ht_feet %></td>
+        <td><%= actor.ht_inches %></td>
+        <td><%= actor.weight %></td>
+        <td><%= actor.eye_color %></td>
+        <td><%= actor.hair_color %></td>
+        <td><%= actor.shoe_size %></td>
+        <td><%= actor.gender %></td>
+        <td><%= actor.ethnicity %></td>
+        <td><%= actor.dob %></td>
+        <td><%= actor.suit_size %></td>
+        <td><%= actor.dress_size %></td>
+        <td><%= actor.shirt_size %></td>
+        <td><%= actor.waist %></td>
+        <td><%= actor.inseam %></td>
+        <td><%= link_to 'Show', actor %></td>
+        <td><%= link_to 'Edit', edit_actor_path(actor) %></td>
+        <td><%= link_to 'Destroy', actor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Actor', new_actor_path %>
