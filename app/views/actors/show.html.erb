@@ -16,11 +16,6 @@
 </p>
 
 <p>
-  <strong>Password digest:</strong>
-  <%= @actor.password_digest %>
-</p>
-
-<p>
   <strong>Image url:</strong>
   <%= @actor.image_url %>
 </p>
@@ -130,5 +125,6 @@
   <%= @actor.inseam %>
 </p>
 
+<%= link_to 'Log out', logout_path, method: :delete %>
 <%= link_to 'Edit', edit_actor_path(@actor) %> |
 <%= link_to 'Back', actors_path %>

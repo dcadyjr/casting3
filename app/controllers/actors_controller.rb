@@ -10,6 +10,7 @@ class ActorsController < ApplicationController
   # GET /actors/1
   # GET /actors/1.json
   def show
+    @actor = Actor.find(params[:id])
   end
 
   # GET /actors/new
@@ -42,6 +43,7 @@ class ActorsController < ApplicationController
   def update
     respond_to do |format|
       if @actor.update(actor_params)
+        log_in @actor
         format.html { redirect_to @actor, notice: 'Actor was successfully updated.' }
         format.json { render :show, status: :ok, location: @actor }
       else
@@ -69,6 +71,6 @@ class ActorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def actor_params
-      params.require(:actor).permit(:first_name, :last_name, :email, :password_digest, :image_url, :tel_no, :street_address, :city, :state, :zip_code, :agent, :union, :ht_feet, :ht_inches, :weight, :eye_color, :hair_color, :shoe_size, :gender, :ethnicity, :dob, :suit_size, :dress_size, :shirt_size, :waist, :inseam)
+      params.require(:actor).permit(:first_name, :last_name, :email, :password, :image_url, :tel_no, :street_address, :city, :state, :zip_code, :agent, :union, :ht_feet, :ht_inches, :weight, :eye_color, :hair_color, :shoe_size, :gender, :ethnicity, :dob, :suit_size, :dress_size, :shirt_size, :waist, :inseam)
     end
 end
