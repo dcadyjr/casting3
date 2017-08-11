@@ -7,4 +7,8 @@ class Agent < ApplicationRecord
 					  format: { with: VALID_EMAIL_REGEX },
 					  uniqueness: { case_sensitive: false }	
 	has_secure_password
+
+	self.table_name = 'agents'
+
+	has_many :projects, class_name: "Project"
 end

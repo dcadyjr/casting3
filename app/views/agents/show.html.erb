@@ -1,20 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>First name:</strong>
-  <%= @agent.first_name %>
+  <%= @agent.first_name %><%= @agent.last_name %>
 </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @agent.last_name %>
-</p>
+<%= link_to 'Create Project', new_project_path %>
 
-<p>
-  <strong>Email:</strong>
-  <%= @agent.email %>
-</p>
-
-<%= link_to 'Edit', edit_agent_path(@agent) %> |
+<%= link_to 'Edit', edit_agent_path(@agent) %>
 <%= link_to 'Back', agents_path %>
 <%= link_to 'Log out', agents_logout_path, method: :delete %>

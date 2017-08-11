@@ -7,6 +7,11 @@ class Actor < ApplicationRecord
 					  format: { with: VALID_EMAIL_REGEX },
 					  uniqueness: { case_sensitive: false }	
 	has_secure_password
-	# validates :password, presence: true, length: { minimum: 6 }
+	
+	self.table_name = 'actors'
 
+	has_many :actors_projects, class_name: "ActorsProject"
+	has_many :projects, through: :actors_projects
+
+	has_many :auditions, class_name: "Audition"
 end
