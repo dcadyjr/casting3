@@ -24,6 +24,8 @@ class RolesController < ApplicationController
   # POST /roles
   # POST /roles.json
   def create
+    puts "HELLLOOOO"
+    puts role_params
     @role = Role.new(role_params)
 
     respond_to do |format|

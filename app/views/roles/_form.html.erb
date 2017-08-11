@@ -16,9 +16,9 @@
     <%= form.text_field :char_name, id: :role_char_name %>
   </div>
 
-  <div class="field">
+  <div class="field" >
     <%= form.label :project_id %>
-    <%= form.text_field :project_id, id: :role_project_id %>
+    <%= form.text_field :project_id, value: params[:format] %>
   </div>
 
   <div class="actions">
