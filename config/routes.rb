@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  resources :agents
   get 'sessions/new'
 
   get '/login', to: 'sessions#new'

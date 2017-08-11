@@ -1,0 +1,37 @@
+<%= form_with(model: agent, local: true) do |form| %>
+  <% if agent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(agent.errors.count, "error") %> prohibited this agent from being saved:</h2>
+
+      <ul>
+      <% agent.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :agent_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :agent_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :agent_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_digest %>
+    <%= form.text_field :password_digest, id: :agent_password_digest %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
