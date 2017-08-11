@@ -15,10 +15,5 @@
   <%= @agent.email %>
 </p>
 
-<p>
-  <strong>Password digest:</strong>
-  <%= @agent.password_digest %>
-</p>
-
 <%= link_to 'Edit', edit_agent_path(@agent) %> |
 <%= link_to 'Back', agents_path %>

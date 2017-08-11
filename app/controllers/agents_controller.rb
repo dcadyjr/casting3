@@ -10,6 +10,7 @@ class AgentsController < ApplicationController
   # GET /agents/1
   # GET /agents/1.json
   def show
+  	@agent = Agent.find(params[:id])
   end
 
   # GET /agents/new
@@ -69,6 +70,6 @@ class AgentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def agent_params
-      params.require(:agent).permit(:first_name, :last_name, :email, :password_digest)
+      params.require(:agent).permit(:first_name, :last_name, :email, :password)
     end
 end
