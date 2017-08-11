@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(version: 20170811150752) do
   create_table "projects", force: :cascade do |t|
     t.string "project_name"
     t.string "production_co"
-    t.string "roles"
     t.string "director"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
