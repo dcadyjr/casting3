@@ -15,6 +15,16 @@
   <%= @project.director %>
 </p>
 
+<div class="col-md-8">
+	<% if @project.roles.any? %>
+		<h3>Roles (<%= @project.roles.count %>)</h3>
+		<ol class="roles">
+			<%= render @role %>
+		</ol>
+		<% end %>
+</div>
+
+
 <%= link_to 'Add Role', new_role_path(@project) %> |
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
