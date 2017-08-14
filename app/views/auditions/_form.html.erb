@@ -20,12 +20,9 @@
     <%= form.label :time %>
     <%= form.text_field :time, id: :audition_time %>
   </div>
-
-  <div class="field">
-    <%= form.label :actor_id %>
-    <%= form.text_field :actor_id, id: :audition_actor_id %>
-  </div>
-
+<div class="field">
+  <%= select_tag "actors", options_from_collection_for_select(@actors, "id", "full_name") %>
+</div>
   <div class="field">
     <%= form.label :role_id %>
     <%= form.text_field :role_id, id: :audition_role_id %>

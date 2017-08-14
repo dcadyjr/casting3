@@ -14,4 +14,8 @@ class Actor < ApplicationRecord
 	has_many :projects, through: :actors_projects
 
 	has_many :auditions, class_name: "Audition"
+
+	def full_name
+		"#{first_name}  #{last_name}"
+	end
 end

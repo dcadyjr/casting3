@@ -5,10 +5,8 @@
   <%= @role.char_name %>
 </p>
 
-<p>
-  <strong>Project:</strong>
-  <%= @role.project %>
-</p>
 
+
+<%= link_to 'Add Role', new_role_path(@project) %> | 
 <%= link_to 'Edit', edit_role_path(@role) %> |
-<%= link_to 'Back', roles_path %>
+<%= link_to 'Back to project', project_path(@role.project_id) %>

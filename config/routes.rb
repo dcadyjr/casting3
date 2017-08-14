@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
 
-  
-  get 'agent_sessions/new'
 
+#routes for actors login sessions
   get 'sessions/new'
-
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-
+#routes for agents login sessions
+  get 'agent_sessions/new'
   get '/agents/login', to: 'agent_sessions#new'
   post '/agents/login', to: 'agent_sessions#create'
   delete '/agents/logout', to: 'agent_sessions#destroy'
