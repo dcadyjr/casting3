@@ -1,3 +1,11 @@
 <li id="role-<%= role.id %>">
-	<span class="character"><%= role.char_name %></span><%= link_to 'create Audition', new_audition_path%> <%= link_to 'Delete Role', edit_role_path%>
-</li>
+	<span class="character"><%= role.char_name %>
+	<span class="project-id" ><%= @project.id %></span>
+	<span class="role-id" ><%= role.id %></span>
+
+	<%= link_to 'create Audition', new_audition_path %> 
+	<%= link_to 'Destroy', role,  method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<!-- style="display:none" -->
+
+<!-- new_audition_path -->

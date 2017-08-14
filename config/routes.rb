@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   post '/agents/login', to: 'agent_sessions#create'
   delete '/agents/logout', to: 'agent_sessions#destroy'
 
+  #routes for roles
+  delete '/roles/destroy', to: 'roles#destroy'
+
   resources :agents
   resources :auditions
   resources :roles

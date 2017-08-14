@@ -10,10 +10,10 @@ class Actor < ApplicationRecord
 	
 	self.table_name = 'actors'
 
-	has_many :actors_projects, class_name: "ActorsProject"
-	has_many :projects, through: :actors_projects
+	has_many :actors_projects, class_name: "ActorsProject", dependent: :destroy
+	has_many :projects, through: :actors_projects, dependent: :destroy
 
-	has_many :auditions, class_name: "Audition"
+	has_many :auditions, class_name: "Audition", dependent: :destroy
 
 	def full_name
 		"#{first_name}  #{last_name}"
