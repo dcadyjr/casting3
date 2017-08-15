@@ -1,6 +1,6 @@
 class ActorsController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update, :show]
 
   # GET /actors
   # GET /actors.json
@@ -73,18 +73,17 @@ class ActorsController < ApplicationController
 
     #confirms a logged-in actor
     def logged_in_user
-      puts logged_in?
       unless logged_in?
-        puts "access denied"
         flash[:danger] = "Please log in."
         redirect_to login_path
       end
+
     end
 
     #confirms the correct actor
     def correct_user
       @actor = Actor.find(params[:id])
-      redirect_to(login_path) unless @actor == @current_actor
+      redirect_to(login_path) unless @actor == current_user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

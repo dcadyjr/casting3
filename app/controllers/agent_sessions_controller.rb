@@ -1,5 +1,5 @@
 class AgentSessionsController < ApplicationController
-	include SessionsHelper
+	include AgentSessionsHelper
   def new
   end
 

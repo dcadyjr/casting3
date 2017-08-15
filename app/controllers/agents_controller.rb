@@ -1,6 +1,6 @@
 class AgentsController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :logged_in_agent, only: [:edit, :update]
+  before_action :correct_agent, only: [:edit, :update, :show]
   
   # GET /agents
   # GET /agents.json
@@ -28,7 +28,7 @@ class AgentsController < ApplicationController
   # POST /agents.json
   def create
     @agent = Agent.new(agent_params)
-    log_in @agent
+    agent_log_in @agent
     respond_to do |format|
       if @agent.save
         format.html { redirect_to @agent, notice: 'Agent was successfully created.' }
@@ -71,17 +71,17 @@ class AgentsController < ApplicationController
     end
 
     #confirms a logged-in agent
-    def logged_in_user
-      unless logged_in?
+    def logged_in_agent
+      unless agent_logged_in?
         flash[:danger] = "Please log in."
         redirect_to agents_login_path
       end
     end
 
     #confirms the correct user
-    def correct_user
+    def correct_agent
       @agent = Agent.find(params[:id])
-      redirect_to(agents_login_path) unless @agent == current_user
+      redirect_to(agents_login_path) unless @agent == agent_current_user
     end
 
 
