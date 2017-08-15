@@ -4,16 +4,16 @@ module AgentSessionsHelper
 	end
 
 	def current_user
-		@current_user ||= Agent.find_by(id: session[:actor_id])
+		@current_agent ||= Agent.find_by(id: session[:agent_id])
 	end
 
 	def logged_in?
-		!current_user.nil?
+		!@current_agent.nil?
 	end
 
 	def log_out
 		session.delete(:agent_id)
-		@current_user = nil
+		@current_agent = nil
 
 	end
 end

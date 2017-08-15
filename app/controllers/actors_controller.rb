@@ -1,5 +1,5 @@
 class ActorsController < ApplicationController
-  before_action :set_actor, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:edit, :update]
 
   # GET /actors
   # GET /actors.json
@@ -20,13 +20,14 @@ class ActorsController < ApplicationController
 
   # GET /actors/1/edit
   def edit
+    @actor = Actor.find(params[:id])
   end
 
   # POST /actors
   # POST /actors.json
   def create
     @actor = Actor.new(actor_params)
-
+    login_in @actor
     respond_to do |format|
       if @actor.save
         format.html { redirect_to @actor, notice: 'Actor was successfully created.' }
@@ -67,6 +68,13 @@ class ActorsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_actor
       @actor = Actor.find(params[:id])
+    end
+
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_path
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

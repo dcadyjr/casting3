@@ -5,16 +5,16 @@ module SessionsHelper
 	end
 
 	def current_user
-		@current_user ||= Actor.find_by(id: session[:actor_id])
+		@current_actor ||= Actor.find_by(id: session[:actor_id])
 	end
 
 	def logged_in?
-		!current_user.nil?
+		!current_actor.nil?
 	end
 
 	def log_out
 		session.delete(:actor_id)
-		@current_user = nil
+		@current_actor = nil
 
 	end
 

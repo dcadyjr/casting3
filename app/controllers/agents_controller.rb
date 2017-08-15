@@ -1,5 +1,5 @@
 class AgentsController < ApplicationController
-  before_action :set_agent, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:edit, :update]
   
   # GET /agents
   # GET /agents.json
@@ -20,13 +20,14 @@ class AgentsController < ApplicationController
 
   # GET /agents/1/edit
   def edit
+    @agent = Agent.find(params[:id])
   end
 
   # POST /agents
   # POST /agents.json
   def create
     @agent = Agent.new(agent_params)
-
+    log_in @agent
     respond_to do |format|
       if @agent.save
         format.html { redirect_to @agent, notice: 'Agent was successfully created.' }
@@ -66,6 +67,13 @@ class AgentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_agent
       @agent = Agent.find(params[:id])
+    end
+
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to agents_login_path
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
