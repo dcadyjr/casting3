@@ -1,5 +1,6 @@
 class ActorsController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update]
 
   # GET /actors
   # GET /actors.json
@@ -27,7 +28,7 @@ class ActorsController < ApplicationController
   # POST /actors.json
   def create
     @actor = Actor.new(actor_params)
-    login_in @actor
+    login_in @actor##logs in actor after registration
     respond_to do |format|
       if @actor.save
         format.html { redirect_to @actor, notice: 'Actor was successfully created.' }
@@ -70,11 +71,20 @@ class ActorsController < ApplicationController
       @actor = Actor.find(params[:id])
     end
 
+    #confirms a logged-in actor
     def logged_in_user
+      puts logged_in?
       unless logged_in?
+        puts "access denied"
         flash[:danger] = "Please log in."
         redirect_to login_path
       end
+    end
+
+    #confirms the correct actor
+    def correct_user
+      @actor = Actor.find(params[:id])
+      redirect_to(login_path) unless @actor == @current_actor
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

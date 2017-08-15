@@ -9,7 +9,11 @@ module SessionsHelper
 	end
 
 	def logged_in?
-		!current_actor.nil?
+		puts "????????"
+		puts @current_actor
+		puts "????????"
+		current_user
+		!@current_actor.nil?
 	end
 
 	def log_out
