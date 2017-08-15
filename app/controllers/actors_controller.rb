@@ -43,7 +43,7 @@ class ActorsController < ApplicationController
   def update
     respond_to do |format|
       if @actor.update(actor_params)
-        log_in @actor
+        
         format.html { redirect_to @actor, notice: 'Actor was successfully updated.' }
         format.json { render :show, status: :ok, location: @actor }
       else

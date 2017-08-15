@@ -15,6 +15,5 @@ class AgentSessionsController < ApplicationController
   def destroy
   	log_out
   	redirect_to agents_login_path
-  	puts "DEAD"
   end
 end
