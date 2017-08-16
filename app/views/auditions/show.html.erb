@@ -12,12 +12,12 @@
 
 <p>
   <strong>Actor:</strong>
-  <%= @audition.actor %>
+  <%= @audition.actor[:first_name] %>
 </p>
 
 <p>
   <strong>Role:</strong>
-  <%= @audition.role %>
+  <%= @audition.role[:char_name] %>
 </p>
 
 <%= link_to 'Edit', edit_audition_path(@audition) %> |
