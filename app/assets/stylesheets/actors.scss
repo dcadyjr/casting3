@@ -1,3 +1,60 @@
 // Place all the styles related to the Actors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// index.html styles
+
+$font-stack: 'Manuale', serif;
+$primary-color: black;
+
+body {
+  font: 100% $font-stack;
+  font-size: 20px !important;
+  color: $primary-color !important;
+}
+
+#actor_reg_btn{
+	
+}
+
+#actor_login_btn{
+
+
+}
+.button_to{
+	width: 100px;
+	height: 100px;
+}
+
+span{
+	padding: 10px;
+}
+
+// new.html.erb
+
+.reg-wrapper{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.reg-info{
+	order: 1;
+	margin: 10px;
+}
+
+.details{
+	order: 2;
+	margin: 10px;
+}
+
+.clothes{
+	order: 4;
+	margin: 10px;
+
+}
+.appearance{
+	order: 3;
+	margin: 10px;
+
+}
