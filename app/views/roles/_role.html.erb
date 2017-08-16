@@ -1,13 +1,11 @@
 <li id="role-<%= role.id %>">
 	<span class="character"><%= role.char_name %>
-	<span class="project-id" ><%= @project.id %></span>
 	<span class="role-id" ><%= role.id %>
-	<%= hidden_field_tag :role_id, @role_id %>
-	</span>
+	<span class="project-id" ><%= @project.id %></span>
+	
 
 	<%= link_to 'create Audition', new_audition_path(:role_id => role.id, :char_name => role.char_name) %> 
 	<%= link_to 'Destroy', role,  method: :delete, data: { confirm: 'Are you sure?' } %>
+	<%= link_to 'Edit', edit_role_path(:id => role.id, :project_id => @project.id, :char_name => role.char_name) %>
 
 <!-- style="display:none" -->
-
-<!-- new_audition_path -->
