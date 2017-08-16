@@ -20,18 +20,27 @@
     <%= form.label :time %>
     <%= form.text_field :time, id: :audition_time %>
   </div>
-<div class="field">
-  <%= form.collection_select :actor_id, @actors, :id, :full_name%>
-</div>
+
   <div class="field">
+    <%= form.collection_select :actor_id, @actors, :id, :full_name%>
+  </div>
+
+  <div class="field">
+    <span>Character:</span>
     <span class="character"><%= @char_name %>
   </div>
-  <div class="field">
+
+  <div class="field" style="display: none">
     <%= form.label :role_id %>
     <%= form.text_field :role_id, :value => @role_id %>
+  </div>
 
+  <div class="field" style="display: none">
+    <%= form.label :project_id %>
+    <%= form.text_field :project_id, :value => @project_id %>
+  </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit  %>
   </div>
 <% end %>

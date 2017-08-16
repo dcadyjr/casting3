@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   #routes for roles
   delete '/roles/destroy', to: 'roles#destroy'
 
+  #route to show auditions for each role
+  get '/auditons/role', to: 'auditions#role_auditions', as: :auditions_role
+
   resources :agents
   resources :auditions
   resources :roles

@@ -20,6 +20,17 @@ class AuditionsController < ApplicationController
     @char_name = params[:char_name]##holds variable to pass to audition form
   end
 
+  #get request to show all auditions for a role
+  def role_auditions
+    
+    @role_id = params[:role_id]##holds variable to pass to audition form
+    @char_name = params[:char_name]##holds variable to pass to audition form
+ 
+    @role_aud = Audition.where(:role_id => @role_id)
+
+
+  end
+
   # GET /auditions/1/edit
   def edit
   end

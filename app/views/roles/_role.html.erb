@@ -4,8 +4,9 @@
 	<span class="project-id" ><%= @project.id %></span>
 	
 
-	<%= link_to 'create Audition', new_audition_path(:role_id => role.id, :char_name => role.char_name) %> 
+	<%= link_to 'create Audition', new_audition_path(:role_id => role.id, :char_name => role.char_name, :project_id => @project.id) %> 
 	<%= link_to 'Destroy', role,  method: :delete, data: { confirm: 'Are you sure?' } %>
 	<%= link_to 'Edit', edit_role_path(:id => role.id, :project_id => @project.id, :char_name => role.char_name) %>
+	<%= link_to 'Auditions', auditions_role_url(:role_id => role.id, :char_name => role.char_name) %>
 
 <!-- style="display:none" -->
