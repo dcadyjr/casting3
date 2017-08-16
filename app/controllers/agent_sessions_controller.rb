@@ -7,7 +7,7 @@ class AgentSessionsController < ApplicationController
   	@agent = Agent.find_by(email: params[:session][:email].downcase)
   	if @agent && @agent.authenticate(params[:session][:password])
       log_in @agent
-  		render "agents/show"
+  		redirect_to projects_path
   	else
       flash.now[:danger] = 'Invalid email/password combination'
   		render '/agents/index.html.erb'

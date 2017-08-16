@@ -16,7 +16,9 @@ class AuditionsController < ApplicationController
   def new
     @audition = Audition.new
     @actors = Actor.all
-   
+    @role_id = params[:role_id]
+    @char_name = params[:char_name]
+    
   end
 
   # GET /auditions/1/edit
@@ -27,7 +29,6 @@ class AuditionsController < ApplicationController
   # POST /auditions.json
   def create
     @audition = Audition.new(audition_params)
-    puts audition_params
     
     respond_to do |format|
 
@@ -74,6 +75,6 @@ class AuditionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def audition_params
-      params.require(:audition).permit(:attended, :time, :first_name, :last_name, :role_id, :actor_id)
+      params.require(:audition).permit(:attended, :time, :first_name, :last_name, :role_id, :actor_id, :char_name)
     end
 end

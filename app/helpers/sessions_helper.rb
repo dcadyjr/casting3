@@ -1,8 +1,6 @@
 module SessionsHelper
 
 	def log_in(actor)
-		puts "&&&&&&&&&"
-		puts actor
 		session[:actor_id] = actor.id
 	end
 
@@ -11,10 +9,6 @@ module SessionsHelper
 	end
 
 	def logged_in?
-		puts "????????"
-		puts session[:actor_id]
-		puts @current_actor
-		puts "????????"
 		current_user
 		!@current_actor.nil?
 	end

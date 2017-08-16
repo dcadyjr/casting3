@@ -24,9 +24,12 @@
   <%= form.collection_select :actor_id, @actors, :id, :full_name%>
 </div>
   <div class="field">
-    <%= form.label :role_id %>
-    <%= form.text_field :role_id, id: :role_id %>
+    <span class="character"><%= @char_name %>
   </div>
+  <div class="field">
+    <%= form.label :role_id %>
+    <%= form.text_field :role_id, :value => @role_id %>
+
 
   <div class="actions">
     <%= form.submit %>
