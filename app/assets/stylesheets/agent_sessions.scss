@@ -1,3 +1,44 @@
 // Place all the styles related to the AgentSessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$font-stack: 'Manuale', serif;
+$primary-color: black;
+$div-margin: 10px;
+
+body {
+  font: 100% $font-stack;
+  font-size: 20px !important;
+  color: $primary-color !important;
+}
+
+// new.html.erb
+
+.register{
+	p{
+		font: 100% $font-stack;
+  		font-size: 20px !important;
+ 	    color: $primary-color !important;
+
+	}
+}
+
+.row{
+	margin: 0 auto;
+	width: 50%;
+	padding: 10px;
+	padding-top: 10%
+
+}
+
+.hello{
+	margin: 0 auto;
+	width: 50%;
+}
+
+.password{
+	padding-top: 10px;
+}
+
+.email{
+	padding-top: 10px;
+}
