@@ -1,129 +1,171 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @actor.first_name %>
-</p>
+<div class="show-wrapper">
 
-<p>
-  <strong>Last name:</strong>
-  <%= @actor.last_name %>
-</p>
+  <div class="image">
+    <p>
+      
+      <%= image_tag @actor.image_url, size: "425x350" %>
+    </p>
+  </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @actor.email %>
-</p>
+  <div class="show-reg-info">
+    <div class="holders">
+      <p>
+        <strong>First name:</strong>
+        <%= @actor.first_name %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Last name:</strong>
+        <%= @actor.last_name %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Email:</strong>
+        <%= @actor.email %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Tel no:</strong>
+        <%= @actor.tel_no %>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @actor.image_url %>
-</p>
+  <div class="show-details">
+    <div class="holders">
+      <p>
+        <strong>Dob:</strong>
+        <%= @actor.dob %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Street address:</strong>
+        <%= @actor.street_address %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>City:</strong>
+        <%= @actor.city %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>State:</strong>
+        <%= @actor.state %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Zip code:</strong>
+        <%= @actor.zip_code %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Agent:</strong>
+        <%= @actor.agent %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Union:</strong>
+        <%= @actor.union %>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Tel no:</strong>
-  <%= @actor.tel_no %>
-</p>
+  <div class="show-appearance">
+    <div class="holders">
+      <p>
+        <strong>Gender:</strong>
+        <%= @actor.gender %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Ethnicity:</strong>
+        <%= @actor.ethnicity %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Ht feet:</strong>
+        <%= @actor.ht_feet %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Ht inches:</strong>
+        <%= @actor.ht_inches %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Weight:</strong>
+        <%= @actor.weight %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Eye color:</strong>
+        <%= @actor.eye_color %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Hair color:</strong>
+        <%= @actor.hair_color %>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Street address:</strong>
-  <%= @actor.street_address %>
-</p>
+  <div class="show-clothes">
+    <div class="holders">
+      <p>
+        <strong>Shoe size:</strong>
+        <%= @actor.shoe_size %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Suit size:</strong>
+        <%= @actor.suit_size %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Dress size:</strong>
+        <%= @actor.dress_size %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Shirt size:</strong>
+        <%= @actor.shirt_size %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Waist:</strong>
+        <%= @actor.waist %>
+      </p>
+    </div>
+    <div class="holders">
+      <p>
+        <strong>Inseam:</strong>
+        <%= @actor.inseam %>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>City:</strong>
-  <%= @actor.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @actor.state %>
-</p>
-
-<p>
-  <strong>Zip code:</strong>
-  <%= @actor.zip_code %>
-</p>
-
-<p>
-  <strong>Agent:</strong>
-  <%= @actor.agent %>
-</p>
-
-<p>
-  <strong>Union:</strong>
-  <%= @actor.union %>
-</p>
-
-<p>
-  <strong>Ht feet:</strong>
-  <%= @actor.ht_feet %>
-</p>
-
-<p>
-  <strong>Ht inches:</strong>
-  <%= @actor.ht_inches %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @actor.weight %>
-</p>
-
-<p>
-  <strong>Eye color:</strong>
-  <%= @actor.eye_color %>
-</p>
-
-<p>
-  <strong>Hair color:</strong>
-  <%= @actor.hair_color %>
-</p>
-
-<p>
-  <strong>Shoe size:</strong>
-  <%= @actor.shoe_size %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @actor.gender %>
-</p>
-
-<p>
-  <strong>Ethnicity:</strong>
-  <%= @actor.ethnicity %>
-</p>
-
-<p>
-  <strong>Dob:</strong>
-  <%= @actor.dob %>
-</p>
-
-<p>
-  <strong>Suit size:</strong>
-  <%= @actor.suit_size %>
-</p>
-
-<p>
-  <strong>Dress size:</strong>
-  <%= @actor.dress_size %>
-</p>
-
-<p>
-  <strong>Shirt size:</strong>
-  <%= @actor.shirt_size %>
-</p>
-
-<p>
-  <strong>Waist:</strong>
-  <%= @actor.waist %>
-</p>
-
-<p>
-  <strong>Inseam:</strong>
-  <%= @actor.inseam %>
-</p>
+</div>
 
 <%= link_to 'Log out', logout_path, method: :delete %>
 <%= link_to 'Edit', edit_actor_path(@actor) %> |
