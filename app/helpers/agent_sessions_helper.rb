@@ -1,4 +1,5 @@
 module AgentSessionsHelper
+
 	def agent_log_in(agent)
 		session[:agent_id] = agent.id
 	end

@@ -23,7 +23,7 @@
 
   <div class="field">
     <span>Actor:</span>
-    <%= form.collection_select :actor_id, @actors, :id, :full_name%>
+    <%= form.collection_select :actor_id, @actors, :id, :full_name %>
   </div>
 
   <div class="field">
@@ -37,7 +37,7 @@
   </div>
 
   <div class="field" style="display: none">
-    <%= form.hidden_field :project_id, :value => @project_id %>
+    <%= form.text_field :project_id, :value => @project_id %>
   </div>
 
   <div class="actions">

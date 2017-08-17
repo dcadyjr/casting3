@@ -6,7 +6,7 @@ class AgentSessionsController < ApplicationController
   def create
   	@agent = Agent.find_by(email: params[:session][:email].downcase)
   	if @agent && @agent.authenticate(params[:session][:password])
-      log_in @agent
+      agent_log_in @agent
   		redirect_to projects_path
   	else
       flash.now[:danger] = 'Invalid email/password combination'
@@ -15,7 +15,7 @@ class AgentSessionsController < ApplicationController
   end
 
   def destroy
-  	log_out
+  	agent_log_out
   	redirect_to agents_login_path
   end
 end

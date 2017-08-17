@@ -10,6 +10,7 @@ class AuditionsController < ApplicationController
   # GET /auditions/1
   # GET /auditions/1.json
   def show
+    @project_id = @audition.role.project_id
   end
 
   # GET /auditions/new
@@ -34,17 +35,16 @@ class AuditionsController < ApplicationController
 
   # GET /auditions/1/edit
   def edit
+    @actors = Actor.all
+    @char_name = @audition.role.char_name
+    @role_id = @audition.role_id
   end
 
   # POST /auditions
   # POST /auditions.json
   def create
-    @params = audition_params.slice(:project_id)
-    puts @params
-    @audition = Audition.new(@params)
-    @project_id = params[:project_id]
-    puts "!!!!!!!!!!"
-    puts @project_id
+    @audition = Audition.new(audition_params)
+  
     respond_to do |format|
 
       if @audition.save!
@@ -90,6 +90,6 @@ class AuditionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def audition_params
-      params.require(:audition).permit(:attended, :time, :first_name, :last_name, :role_id, :actor_id, :char_name, :project_id)
+      params.require(:audition).permit(:attended, :time, :first_name, :last_name, :role_id, :actor_id, :char_name)
     end
 end

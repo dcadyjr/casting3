@@ -12,7 +12,7 @@
 
 <p>
   <strong>Actor:</strong>
-  <%= @audition.actor[:first_name]  + @audition.actor[:last_name]%>
+  <%= @audition.actor[:first_name]  +  @audition.actor[:last_name]%>
 </p>
 
 <p>
@@ -23,4 +23,4 @@
 
 
 <%= link_to 'Edit', edit_audition_path(@audition) %> |
-<%= link_to 'Back to project', projects_path(@project_id) %>
+<%= link_to 'Back to project', project_path(@project_id) %>

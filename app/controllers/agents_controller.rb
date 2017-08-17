@@ -28,9 +28,10 @@ class AgentsController < ApplicationController
   # POST /agents.json
   def create
     @agent = Agent.new(agent_params)
-    agent_log_in @agent
+
     respond_to do |format|
       if @agent.save
+        agent_log_in @agent
         format.html { redirect_to @agent, notice: 'Agent was successfully created.' }
         format.json { render :show, status: :created, location: @agent }
       else
@@ -81,7 +82,11 @@ class AgentsController < ApplicationController
     #confirms the correct user
     def correct_agent
       @agent = Agent.find(params[:id])
+      puts "!!!!!!!!"
+      puts @agent
+      puts agent_current_user
       redirect_to(agents_login_path) unless @agent == agent_current_user
+
     end
 
 
