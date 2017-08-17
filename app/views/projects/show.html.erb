@@ -1,31 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="wrapper">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Project name:</strong>
-  <%= @project.project_name %>
-</p>
+	<p>
+	  <strong>Project name:</strong>
+	  <%= @project.project_name %>
+	</p>
 
-<p>
-  <strong>Production co:</strong>
-  <%= @project.production_co %>
-</p>
+	<p>
+	  <strong>Production co:</strong>
+	  <%= @project.production_co %>
+	</p>
 
-<p>
-  <strong>Director:</strong>
-  <%= @project.director %>
-</p>
+	<p>
+	  <strong>Director:</strong>
+	  <%= @project.director %>
+	</p>
 
-<div class="col-md-8">
-	<% if @project.roles.any? %>
-		<h3>Roles (<%= @project.roles.count %>)</h3>
-		<ol class="roles">
-			<%= render @role %>
-		</ol>
-		<% end %>
+	<div class="col-md-8">
+		<% if @project.roles.any? %>
+			<h3>Roles (<%= @project.roles.count %>)</h3>
+			<ol class="roles">
+				<%= render @role %>
+			</ol>
+			<% end %>
+	</div>
+
+
+	<%= link_to 'Add Role', new_role_path(@project) %> |
+	<%= link_to 'Edit', edit_project_path(@project) %> |
+	<%= link_to 'Back', projects_path %>|
+	<%= link_to 'Log out', agents_logout_path, method: :delete %>
 </div>
-
-
-<%= link_to 'Add Role', new_role_path(@project) %> |
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>|
-<%= link_to 'Log out', agents_logout_path, method: :delete %>

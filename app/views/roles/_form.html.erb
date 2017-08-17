@@ -16,6 +16,11 @@
     <%= form.text_field :char_name, value: params[:char_name] %>
   </div>
 
+  <div class="field" style="display:none" >
+    <%= form.label :project_id %>
+    <%= form.text_field :project_id, value: params[:format] %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

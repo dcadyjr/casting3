@@ -1,3 +1,31 @@
 // Place all the styles related to the Roles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// _role.html.rb
+.link-wrapper{
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	margin-bottom: 10px;
+}
+.character{
+	
+}
+.create {
+	padding: 5px;
+
+}
+
+.delete{
+	padding: 5px;
+}
+
+.edit{
+	padding: 5px;
+}
+
+.auditions{
+	padding: 5px;
+}

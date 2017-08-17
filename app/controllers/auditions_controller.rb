@@ -18,6 +18,7 @@ class AuditionsController < ApplicationController
     @actors = Actor.all
     @role_id = params[:role_id]##holds variable to pass to audition form
     @char_name = params[:char_name]##holds variable to pass to audition form
+    @project_id = params[:project_id]##holds variable to pass to audition form
   end
 
   #get request to show all auditions for a role
@@ -38,8 +39,12 @@ class AuditionsController < ApplicationController
   # POST /auditions
   # POST /auditions.json
   def create
-    @audition = Audition.new(audition_params)
-    
+    @params = audition_params.slice(:project_id)
+    puts @params
+    @audition = Audition.new(@params)
+    @project_id = params[:project_id]
+    puts "!!!!!!!!!!"
+    puts @project_id
     respond_to do |format|
 
       if @audition.save!
@@ -85,6 +90,6 @@ class AuditionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def audition_params
-      params.require(:audition).permit(:attended, :time, :first_name, :last_name, :role_id, :actor_id, :char_name)
+      params.require(:audition).permit(:attended, :time, :first_name, :last_name, :role_id, :actor_id, :char_name, :project_id)
     end
 end

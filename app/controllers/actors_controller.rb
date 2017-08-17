@@ -28,7 +28,7 @@ class ActorsController < ApplicationController
   # POST /actors.json
   def create
     @actor = Actor.new(actor_params)
-    login_in @actor##logs in actor after registration
+    log_in @actor##logs in actor after registration
     respond_to do |format|
       if @actor.save
         format.html { redirect_to @actor, notice: 'Actor was successfully created.' }

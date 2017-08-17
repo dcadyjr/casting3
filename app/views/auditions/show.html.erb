@@ -20,9 +20,7 @@
   <%= @audition.role[:char_name] %>
 </p>
 
-<div class="field" >
-   <span>  #{@project.id} </span>
-</div>
+
 
 <%= link_to 'Edit', edit_audition_path(@audition) %> |
-<%= link_to 'Back to project', projects_path(@project) %>
+<%= link_to 'Back to project', projects_path(@project_id) %>

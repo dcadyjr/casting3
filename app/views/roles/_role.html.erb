@@ -2,11 +2,23 @@
 	
 	<span class="role-id" style="display:none"><%= role.id %></span>
 	<span class="project-id" style="display:none"><%= @project.id %></span>
-	<span class="character" ><%= role.char_name %></span>
-	
 
-	<%= link_to 'create Audition', new_audition_path(:role_id => role.id, :char_name => role.char_name, :project_id => @project.id) %> 
-	<%= link_to 'Destroy', role,  method: :delete, data: { confirm: 'Are you sure?' } %>
-	<%= link_to 'Edit', edit_role_path(:id => role.id, :project_id => @project.id, :char_name => role.char_name) %>
-	<%= link_to 'Auditions', auditions_role_url(:role_id => role.id, :char_name => role.char_name) %>
+		
+			<div class="character">
+				<span><%= role.char_name %></span>
+			</div>
+		<div class="link-wrapper">
+			<div class="create">
+				<%= link_to 'create Audition', new_audition_path(:role_id => role.id, :char_name => role.char_name, :project_id => @project.id) %> 
+			</div>
+			<div class="delete">
+				<%= link_to 'Delete', role,  method: :delete, data: { confirm: 'Are you sure?' } %>
+			</div>
+			<div class='edit'>
+				<%= link_to 'Edit', edit_role_path(:id => role.id, :project_id => @project.id, :char_name => role.char_name) %>
+			</div>
+			<div class='auditions'>
+				<%= link_to 'See All Auditions', auditions_role_url(:role_id => role.id, :char_name => role.char_name) %>
+			</div>
+		</div>	
 
