@@ -93,6 +93,13 @@ span{
 	margin: $div-margin;
 	flex-grow: 1;
 }
+.holders{
+	p{
+	font: 100% $font-stack;
+  	font-size: 20px !important;
+  	color: $primary-color !important;
+  }
+}
 
 
 

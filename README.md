@@ -19,7 +19,7 @@ This is a application geared towards the theatre, film/TV casting world. It look
 	https://trello.com/b/8C2ZAVOb/casting3
 
 ## Schema
-!![screen shot](images/schema.png "screenshot")
+![screen shot](images/schema.png "screenshot")
 
 ## Technologies Used
 Ruby 2.4, Rails 5, ActiveRecord, Postrgresql, HTML, CSS 
