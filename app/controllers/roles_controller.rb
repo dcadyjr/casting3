@@ -10,6 +10,7 @@ class RolesController < ApplicationController
   # GET /roles/1
   # GET /roles/1.json
   def show
+  
   end
 
   # GET /roles/new
@@ -19,7 +20,7 @@ class RolesController < ApplicationController
 
   # GET /roles/1/edit
   def edit
-    
+    @char_name = @role.char_name
   end
 
   # POST /roles

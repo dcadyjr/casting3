@@ -82,9 +82,6 @@ class AgentsController < ApplicationController
     #confirms the correct user
     def correct_agent
       @agent = Agent.find(params[:id])
-      puts "!!!!!!!!"
-      puts @agent
-      puts agent_current_user
       redirect_to(agents_login_path) unless @agent == agent_current_user
 
     end
