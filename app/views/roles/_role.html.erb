@@ -18,7 +18,7 @@
 				<%= link_to 'Edit', edit_role_path(:id => role.id, :project_id => @project.id, :char_name => role.char_name) %>
 			</div>
 			<div class='auditions'>
-				<%= link_to 'See All Auditions', auditions_role_url(:role_id => role.id, :char_name => role.char_name) %>
+				<%= link_to 'See All Auditions', auditions_role_url(:role_id => role.id, :char_name => role.char_name, :project_id => @project.id) %>
 			</div>
 		</div>	
 

@@ -16,7 +16,7 @@
       <tr>
         <td><%= audition.attended %></td>
         <td><%= audition.time %></td>
-        <td><%= audition.actor[:first_name] + audition.actor[:last_name]%></td>
+        <td><%= audition.actor[:first_name] + " " + audition.actor[:last_name]%></td>
         <td><%= audition.role[:char_name] %></td>
         <td><%= link_to 'Show', audition %></td>
         <td><%= link_to 'Edit', edit_audition_path(audition) %></td>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Audition', new_audition_path %>
+<%= link_to 'New Audition', new_audition_path(params[:project_id], :char_name => @char_name, :role_id => @role_id) %>
