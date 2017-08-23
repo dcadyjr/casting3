@@ -7,6 +7,6 @@
 
 
 
-<%= link_to 'Add Role', new_role_path(@project) %> | 
+<%= link_to 'Add Role', new_role_path(@role.project_id) %> | 
 <%= link_to 'Edit', edit_role_path(@role) %> |
 <%= link_to 'Back to project', project_path(@role.project_id) %>

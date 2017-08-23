@@ -57,8 +57,8 @@ class RolesController < ApplicationController
   # DELETE /roles/1.json
   def destroy
     @role.destroy
-    
-    session[:return_to] ||= request.referer
+
+    session[:return_to] ||= request.referer # for redirecting back to the same page upon delete from project page.
 
     respond_to do |format|
       format.html { redirect_to session.delete(:return_to), notice: 'Role was successfully destroyed.' }
