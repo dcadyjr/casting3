@@ -1,14 +1,41 @@
 <p id="notice"><%= notice %></p>
 
 <div>
-	<span id="intro">Welcome Actors! If you are new click 'Register' below to create your profile.</span> 
-
-	<div id='actor_reg_btn'>
-		<%= link_to 'Register', new_actor_path %>
+	<div>
+		<div id="logo">
+			<img src="http://www.clker.com/cliparts/R/5/G/v/Q/J/theatre-masks.svg" height="50" width="50">
+			<p>ABC Theatre Company</p>
+		</div>
+		<span id="intro">Welcome Actors! Thank you for your interest in our auditions.
+		If you are new click 'Register' below to create your profile.  If you have already created a profile, login if you need to make changes to your details.</span> 
 	</div>
-	<span >Returning actors click 'Login' to update your information.</span>
-	<div id='actor_login_btn'>
-		<%= link_to 'Login', login_path %>
+
+	<div class=container>
+		<div class="access">
+			<div id='actor_reg_btn'>
+				<%= link_to 'Register', new_actor_path %>
+			</div>
+			<div id='actor_login_btn'>
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<hi>Log in</hi>
+						<%= form_for(:session, url: login_path) do |f| %>
+
+							<%= f.label :email %>
+							<%= f.email_field :email, class: 'form-control' %>
+
+							<%= f.label :password %>
+							<%= f.password_field :password, class: 'form-control' %>
+
+							<%= f.submit "log in", class: "btn btn-primary" %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='production-img'>
+			<img src="http://www.pashakespeare.org/photos/hamlet/full/PA%20Shakespeare%20Festival%20Hamlet%20Photo%20H.jpg" height="300", width="350">
+		</div>
 	</div>
 </div>
 
