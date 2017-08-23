@@ -57,8 +57,11 @@ class RolesController < ApplicationController
   # DELETE /roles/1.json
   def destroy
     @role.destroy
+    
+    session[:return_to] ||= request.referer
+
     respond_to do |format|
-      format.html { redirect_to roles_url, notice: 'Role was successfully destroyed.' }
+      format.html { redirect_to session.delete(:return_to), notice: 'Role was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
