@@ -21,6 +21,6 @@
 </p>
 
 
-<%= link_to 'New Audition', new_audition_path(@project_id, @char_name, @role_id) %>
+<%= link_to 'New Audition', new_audition_path(@project_id, :role_id => @role_id, :char_name => @char_name) %> |
 <%= link_to 'Edit', edit_audition_path(@audition) %> |
 <%= link_to 'Back to project', project_path(@project_id) %>

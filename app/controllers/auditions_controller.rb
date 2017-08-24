@@ -11,6 +11,8 @@ class AuditionsController < ApplicationController
   # GET /auditions/1.json
   def show
     @project_id = @audition.role.project_id
+    @role_id = @audition.role.id
+    @char_name = @audition.role.char_name
   end
 
   # GET /auditions/new
@@ -44,9 +46,9 @@ class AuditionsController < ApplicationController
   # POST /auditions.json
   def create
     @audition = Audition.new(audition_params)
-    @role_id = params[:role_id]
-    @char_name = params[:char_name]
-    @project_id = params[:project_id]
+    @role_id = @audition[:role_id]
+    @char_name = @audition[:char_name]
+    @project_id = @audition[:project_id]
     
     respond_to do |format|
 
@@ -79,8 +81,10 @@ class AuditionsController < ApplicationController
   # DELETE /auditions/1.json
   def destroy
     @audition.destroy
+    session[:return_to] ||= request.referer # for redirecting back to the same page upon delete from project page.
+
     respond_to do |format|
-      format.html { redirect_to auditions_url, notice: 'Audition was successfully destroyed.' }
+      format.html { redirect_to session.delete(:return_to), notice: 'Audition was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
