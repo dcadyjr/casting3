@@ -1,8 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Agents</h1>
+<h1>Welcome to the Audition Portal</h1>
 
+<div class="container">
+	<div id="reg-link">
+		<p> New user? <%= link_to "Register!", new_agent_path %></p>
+	</div>
 
-
-<%= link_to 'Register', new_agent_path %>
-<%= link_to 'Log in', agents_login_path %>
+	<div class="row">
+		<h4> Log in</h4>
+		<div class="col-md-6 col-md-offset-3">
+			<%= form_for(:session, url: agents_login_path) do |f| %>
+				<div class="email">
+					<%= f.label :email %>
+					<%= f.email_field :email, class: 'form-control' %>
+				</div>
+				<div class="password">
+				<%= f.label :password %>
+				<%= f.password_field :password, class: 'form-control' %>
+				</div>
+				<%= f.submit "log in", class: "btn btn-primary" %>
+			<% end %>
+		</div>
+	</div>	
+</div>

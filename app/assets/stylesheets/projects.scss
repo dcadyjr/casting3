@@ -12,6 +12,11 @@ $div-margin: 10px;
 .project-wrapper {
 	margin: 0 auto;
 	width: 600px;
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  align-content: center;
+
 	p{
 		font: 100% $font-stack;
   		font-size: 20px !important;
@@ -28,4 +33,9 @@ $div-margin: 10px;
   		font-size: 20px !important;
   		color: $primary-color !important;
   	}
+}
+
+.project-info{
+  margin-left: -350px;
+
 }
