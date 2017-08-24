@@ -15,12 +15,9 @@
     <tbody>
       <% @projects.each do |project| %>
         <tr>
-          <td><%= project.project_name %></td>
+          <td><%= link_to project.project_name, project %></td>
           <td><%= project.production_co %></td>
           <td><%= project.director %></td>
-          <td><%= link_to 'Open', project %></td>
-          <td><%= link_to 'Edit', edit_project_path(project) %></td>
-          <td><%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
@@ -29,6 +26,10 @@
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
-
+<%= @current_agent.first_name %>
+<%= @current_agent.last_name %>
 <%= link_to 'Log out', agents_logout_path, method: :delete %>
+<%= link_to 'Projects Home', :projects %>||||||||
+
+
+<%= link_to 'New Project', new_project_path %>

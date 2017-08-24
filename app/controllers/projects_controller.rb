@@ -1,10 +1,15 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  include AgentSessionsHelper
 
   # GET /projects
   # GET /projects.json
   def index
     @projects = Project.all
+    agent_current_user
+    puts "!!!!"
+    puts @current_agent.first_name
+    puts @current_agent.last_name
   end
 
   # GET /projects/1
@@ -12,22 +17,28 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find (params[:id])
     @role = @project.roles
+    @agent = Agent.find(params[:id])
+    agent_current_user
+    
 
   end
 
   # GET /projects/new
   def new
     @project = Project.new
+    agent_current_user
   end
 
   # GET /projects/1/edit
   def edit
+    agent_current_user
   end
 
   # POST /projects
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    agent_current_user
 
     respond_to do |format|
       if @project.save
@@ -43,6 +54,7 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
+    agent_current_user
     respond_to do |format|
       if @project.update(project_params)
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
@@ -57,6 +69,7 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
+    agent_current_user
     @project.destroy
     respond_to do |format|
       format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }

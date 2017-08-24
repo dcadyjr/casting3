@@ -1,32 +1,41 @@
 class RolesController < ApplicationController
   before_action :set_role, only: [:show, :edit, :update, :destroy]
+  include AgentSessionsHelper
 
   # GET /roles
   # GET /roles.json
   def index
     @roles = Role.all
+    agent_current_user
+    
   end
 
   # GET /roles/1
   # GET /roles/1.json
   def show
+    agent_current_user
   
   end
 
   # GET /roles/new
   def new
     @role = Role.new
+    agent_current_user
+    
   end
 
   # GET /roles/1/edit
   def edit
     @char_name = @role.char_name
+    agent_current_user
+   
   end
 
   # POST /roles
   # POST /roles.json
   def create
     @role = Role.new(role_params)
+    agent_current_user
 
     respond_to do |format|
       if @role.save
@@ -42,6 +51,8 @@ class RolesController < ApplicationController
   # PATCH/PUT /roles/1
   # PATCH/PUT /roles/1.json
   def update
+    agent_current_user
+    
     respond_to do |format|
       if @role.update(role_params)
         format.html { redirect_to @role, notice: 'Role was successfully updated.' }
@@ -56,6 +67,8 @@ class RolesController < ApplicationController
   # DELETE /roles/1
   # DELETE /roles/1.json
   def destroy
+    agent_current_user
+   
     @role.destroy
 
     session[:return_to] ||= request.referer # for redirecting back to the same page upon delete from project page.

@@ -1,5 +1,6 @@
 class AgentSessionsController < ApplicationController
 	include AgentSessionsHelper
+
   def new
   end
 
@@ -11,7 +12,7 @@ class AgentSessionsController < ApplicationController
   	else
       flash.now[:danger] = 'Invalid email/password combination'
   		render '/agents/index.html.erb'
- 	end
+ 	  end
   end
 
   def destroy
