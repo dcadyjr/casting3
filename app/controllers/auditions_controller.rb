@@ -1,10 +1,15 @@
 class AuditionsController < ApplicationController
   before_action :set_audition, only: [:show, :edit, :update, :destroy]
+  include AgentSessionsHelper
 
   # GET /auditions
   # GET /auditions.json
   def index
     @auditions = Audition.all
+    agent_current_user
+    puts "!!!!"
+    puts @current_agent.first_name
+    puts @current_agent.last_name
   end
 
   # GET /auditions/1
@@ -13,6 +18,7 @@ class AuditionsController < ApplicationController
     @project_id = @audition.role.project_id
     @role_id = @audition.role.id
     @char_name = @audition.role.char_name
+    agent_current_user
   end
 
   # GET /auditions/new
@@ -22,6 +28,7 @@ class AuditionsController < ApplicationController
     @role_id = params[:role_id]##holds variable to pass to audition form
     @char_name = params[:char_name]##holds variable to pass to audition form
     @project_id = params[:format]##holds variable to pass to audition form
+    agent_current_user
 
   end
 
@@ -32,6 +39,7 @@ class AuditionsController < ApplicationController
     @project_id = params[:project_id]
 
     @role_aud = Audition.where(:role_id => @role_id)
+    agent_current_user
 
   end
 
@@ -40,6 +48,7 @@ class AuditionsController < ApplicationController
     @actors = Actor.all
     @char_name = @audition.role.char_name
     @role_id = @audition.role_id
+    agent_current_user
   end
 
   # POST /auditions
@@ -49,6 +58,7 @@ class AuditionsController < ApplicationController
     @role_id = @audition[:role_id]
     @char_name = @audition[:char_name]
     @project_id = @audition[:project_id]
+    agent_current_user
     
     respond_to do |format|
 
@@ -66,6 +76,8 @@ class AuditionsController < ApplicationController
   # PATCH/PUT /auditions/1
   # PATCH/PUT /auditions/1.json
   def update
+    agent_current_user
+
     respond_to do |format|
       if @audition.update(audition_params)
         format.html { redirect_to @audition, notice: 'Audition was successfully updated.' }
@@ -80,6 +92,8 @@ class AuditionsController < ApplicationController
   # DELETE /auditions/1
   # DELETE /auditions/1.json
   def destroy
+    agent_current_user
+    
     @audition.destroy
     session[:return_to] ||= request.referer # for redirecting back to the same page upon delete from project page.
 

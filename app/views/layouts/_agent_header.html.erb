@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag "agent_header" %>
+
+<header class="navbar">
+ 	<div class="name-logo">
+ 		<span>ABC theatre</span>
+ 	</div>
+ 	<div class"agent_name">
+ 		<%= @current_agent.first_name %>
+		<%= @current_agent.last_name %>
+	</div>
+	<div class="links">
+		<%= link_to 'Log out', agents_logout_path, method: :delete %>
+		<%= link_to 'Projects Home', :projects %>
+	</div>
+
+</header>
+
+<%= yield %>

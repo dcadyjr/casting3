@@ -1,12 +1,13 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   include AgentSessionsHelper
+  # layout "agents_header"
 
   # GET /projects
   # GET /projects.json
   def index
     @projects = Project.all
-    agent_current_user
+    agent_current_user 
     puts "!!!!"
     puts @current_agent.first_name
     puts @current_agent.last_name

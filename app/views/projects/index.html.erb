@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+  <% if agent_logged_in? %>
+    <%= render'layouts/agent_header' %>
+  <% end %>
 
 <h1>Projects</h1>
 <div class="index-wrapper">
@@ -26,10 +29,7 @@
 
 <br>
 
-<%= @current_agent.first_name %>
-<%= @current_agent.last_name %>
-<%= link_to 'Log out', agents_logout_path, method: :delete %>
-<%= link_to 'Projects Home', :projects %>||||||||
+
 
 
 <%= link_to 'New Project', new_project_path %>

@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<% if agent_logged_in? %>
+    <%= render'layouts/agent_header' %>
+  <% end %>
 
 <p>
   <strong>Attended:</strong>

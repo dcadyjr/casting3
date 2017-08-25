@@ -1,3 +1,7 @@
+<% if agent_logged_in? %>
+    <%= render'layouts/agent_header' %>
+  <% end %>
+
 <h1>New Audition</h1>
 
 <%= render 'form', audition: @audition %>
