@@ -3,8 +3,9 @@
     <%= render'layouts/agent_header' %>
   <% end %>
 
-<h1>Projects</h1>
+
 <div class="index-wrapper">
+  <h1>Projects</h1>
   <table>
     <thead>
       <tr>
@@ -25,6 +26,9 @@
       <% end %>
     </tbody>
   </table>
+  <div class="proj-link1">
+    <%= link_to 'New Project', new_project_path %>
+  </div>
 </div>
 
 <br>
@@ -32,4 +36,4 @@
 
 
 
-<%= link_to 'New Project', new_project_path %>
+

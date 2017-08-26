@@ -9,6 +9,7 @@ $div-margin: 10px;
 
 // show.html.erb
 
+
 .project-wrapper {
 	margin: 0 auto;
 	width: 600px;
@@ -19,14 +20,15 @@ $div-margin: 10px;
 
 	p{
 		font: 100% $font-stack;
-  		font-size: 20px !important;
-  		color: $primary-color !important;
+  	font-size: 20px !important;
+  	color: $primary-color !important;
 	}
 }
 .index-wrapper{
 	font: 100% $font-stack;
-  	font-size: 20px !important;
-  	color: $primary-color !important;
+  font-size: 20px !important;
+  color: $primary-color !important;
+  margin-left: 50px;
 
   	td{
   		font: 100% $font-stack;
@@ -38,4 +40,7 @@ $div-margin: 10px;
 .project-info{
   margin-left: -350px;
 
+}
+.proj-link1{
+  margin-top: 25px;
 }

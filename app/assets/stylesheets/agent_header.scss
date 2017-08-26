@@ -1,6 +1,32 @@
+$font-stack: 'Manuale', serif;
+
 header{
+	font: 100% $font-stack;
 	background-color: black;
-	width: 100%;
 	height: 100px;
 	color: white;
+	display: flex;
+	flex-direction: row;
+	align-content: stretch;
+	top: 0;
+	left: 0;
+	margin: 0;
+}
+
+.name-logo{
+	font-size: 30px;
+	margin-right: -600px;
+}
+
+.agent-name{
+	margin-left: auto;
+	margin-right: -600px;
+}
+
+.header-links{
+	margin-left: auto;
+	margin-right: 25px;
+	a:visited{
+		color: inherit;
+	}
 }
