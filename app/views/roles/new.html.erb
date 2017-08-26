@@ -2,8 +2,13 @@
     <%= render'layouts/agent_header' %>
   <% end %>
 
-<h1>New Role</h1>
+<div class="role-new-container">
 
-<%= render 'form', role: @role %>
+	<h1>New Role</h1>
 
-<%= link_to 'Back', project_path(params[:format]) %>
+	<%= render 'form', role: @role %>
+
+	<%= link_to 'Back', project_path(params[:format]) %>
+
+</div>
+

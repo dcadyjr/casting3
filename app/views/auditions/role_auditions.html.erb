@@ -2,35 +2,38 @@
     <%= render'layouts/agent_header' %>
   <% end %>
 
-<h1>Auditions</h1>
+<div class="role-aud-container">
+  <h1>Auditions</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Attended</th>
-      <th>Time</th>
-      <th>Actor</th>
-      <th>Role</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @role_aud.each do |audition| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= audition.attended %></td>
-        <td><%= audition.time %></td>
-        <td><%= audition.actor[:first_name] + " " + audition.actor[:last_name]%></td>
-        <td><%= audition.role[:char_name] %></td>
-        <td><%= link_to 'Show', audition %></td>
-        <td><%= link_to 'Edit', edit_audition_path(audition) %></td>
-        <td><%= link_to 'Delete', audition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Attended</th>
+        <th>Time</th>
+        <th>Actor</th>
+        <th>Role</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @role_aud.each do |audition| %>
+        <tr>
+          <td><%= audition.attended %></td>
+          <td><%= audition.time %></td>
+          <td><%= audition.actor[:first_name] + " " + audition.actor[:last_name]%></td>
+          <td><%= audition.role[:char_name] %></td>
+          <td><%= link_to 'Show', audition %></td>
+          <td><%= link_to 'Edit', edit_audition_path(audition) %></td>
+          <td><%= link_to 'Delete', audition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Audition', new_audition_path(params[:project_id], :char_name => @char_name, :role_id => @role_id) %>
-<%= link_to 'Back to project', project_path(params[:project_id]) %>
+  <br>
+
+  <%= link_to 'New Audition', new_audition_path(params[:project_id], :char_name => @char_name, :role_id => @role_id) %>
+  <%= link_to 'Back to project', project_path(params[:project_id]) %>
+
+</div>

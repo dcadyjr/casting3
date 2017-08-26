@@ -1,16 +1,18 @@
 <% if agent_logged_in? %>
     <%= render'layouts/agent_header' %>
   <% end %>
+<div class="role-show-container">
+	<p id="notice"><%= notice %></p>
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Char name:</strong>
-  <%= @role.char_name %>
-</p>
+	<p>
+	  <strong>Char name:</strong>
+	  <%= @role.char_name %>
+	</p>
 
 
 
-<%= link_to 'Add Role', new_role_path(@role.project_id) %> | 
-<%= link_to 'Edit', edit_role_path(@role) %> |
-<%= link_to 'Back to project', project_path(@role.project_id) %>
+	<%= link_to 'Add Role', new_role_path(@role.project_id) %> | 
+	<%= link_to 'Edit', edit_role_path(@role) %> |
+	<%= link_to 'Back to project', project_path(@role.project_id) %>
+
+</div>

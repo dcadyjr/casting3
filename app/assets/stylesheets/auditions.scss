@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $font-stack: 'Manuale', serif;
 $primary-color: black;
-$div-margin: 10px;
+$div-margin: 350px;
 
 td{
 	font: 100% $font-stack;
@@ -16,3 +16,18 @@ p{
   	font-size: 20px !important;
   	color: $primary-color !important;
 }
+
+//show.html.erb
+.aud-show-container{
+	margin-left: $div-margin;
+}
+
+//role_auditions.html.erb
+.role-aud-container{
+	margin-left: $div-margin;
+}
+
+//new.html.erb
+.new-aud-container{
+	margin-left: $div-margin;
+}	

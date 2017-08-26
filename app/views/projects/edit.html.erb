@@ -2,11 +2,11 @@
     <%= render'layouts/agent_header' %>
   <% end %>
 
-<h1>Editing Project</h1>
+<div class="edit-proj-container">
+	<h1>Editing Project</h1>
 
-<%= render 'form', project: @project %>
+	<%= render 'form', project: @project %>
+</div>
 
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %> |
 
-<%= link_to 'Log out', agents_logout_path, method: :delete %>
+

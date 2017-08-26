@@ -2,10 +2,10 @@
     <%= render'layouts/agent_header' %>
   <% end %>
   
-<h1>New Project</h1>
+<div class="new-proj-container">
+	<h1>New Project</h1>
 
-<%= render 'form', project: @project %>
+	<%= render 'form', project: @project %>
 
-<%= link_to 'Back', projects_path %>
+</div>
 
-<%= link_to 'Log out', agents_logout_path, method: :delete %>

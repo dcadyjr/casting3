@@ -5,7 +5,8 @@
 
 $font-stack: 'Manuale', serif;
 $primary-color: black;
-$div-margin: 10px;
+$div-margin: 350px;
+
 
 // show.html.erb
 
@@ -24,23 +25,48 @@ $div-margin: 10px;
   	color: $primary-color !important;
 	}
 }
-.index-wrapper{
-	font: 100% $font-stack;
-  font-size: 20px !important;
-  color: $primary-color !important;
-  margin-left: 50px;
-
-  	td{
-  		font: 100% $font-stack;
-  		font-size: 20px !important;
-  		color: $primary-color !important;
-  	}
-}
 
 .project-info{
   margin-left: -350px;
 
 }
+
+//index.html.erb
+
+.index-wrapper{
+  font: 100% $font-stack;
+  font-size: 20px !important;
+  color: $primary-color !important;
+  margin-left: 50px;
+
+    td{
+      font: 100% $font-stack;
+      font-size: 20px !important;
+      color: $primary-color !important;
+    }
+}
+
+
 .proj-link1{
   margin-top: 25px;
+}
+h1{ 
+  margin-top: 0;
+}
+
+//new.html.erb
+
+.new-proj-container{
+  margin-left: $div-margin;
+}
+
+//edit.html.erb
+
+.edit-proj-container{
+  margin-left: $div-margin;
+}
+
+//show.html.erb
+.role-show-container{
+  margin-left: $div-margin;
 }

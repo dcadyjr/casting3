@@ -33,3 +33,16 @@ $div-margin: 10px;
 .auditions{
 	padding: 5px;
 }
+
+//new.html.erb
+.role-new-container{
+	margin-left: 350px;
+	font: 100% $font-stack;
+
+}
+
+//edit.html.erb
+.role-edit-div{
+	margin-left: 350px;
+	font: 100% $font-stack;
+}
