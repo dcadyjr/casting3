@@ -6,6 +6,8 @@
 <div class="aud-show-container">
   <p id="notice"><%= notice %></p>
 
+  <%= image_tag @audition.actor.image_url, size: "125x100" %>
+
   <p>
     <strong>Attended:</strong>
     <%= @audition.attended %>
