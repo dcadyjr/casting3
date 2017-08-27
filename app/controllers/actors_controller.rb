@@ -60,7 +60,7 @@ class ActorsController < ApplicationController
   def destroy
     @actor.destroy
     respond_to do |format|
-      format.html { redirect_to actors_url, notice: 'Actor was successfully destroyed.' }
+      format.html { redirect_to actors_url, notice: 'Actor was successfully deleted.' }
       format.json { head :no_content }
     end
   end

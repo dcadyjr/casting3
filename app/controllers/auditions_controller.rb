@@ -48,6 +48,9 @@ class AuditionsController < ApplicationController
     @actors = Actor.all
     @char_name = @audition.role.char_name
     @role_id = @audition.role_id
+    @project_id = @audition.role.project_id
+    puts "!!!!!!!!!!!"
+    puts @project_id
     agent_current_user
   end
 
@@ -98,7 +101,7 @@ class AuditionsController < ApplicationController
     session[:return_to] ||= request.referer # for redirecting back to the same page upon delete from project page.
 
     respond_to do |format|
-      format.html { redirect_to session.delete(:return_to), notice: 'Audition was successfully destroyed.' }
+      format.html { redirect_to session.delete(:return_to), notice: 'Audition was successfully deleted.' }
       format.json { head :no_content }
     end
   end

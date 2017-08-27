@@ -2,9 +2,12 @@
     <%= render'layouts/agent_header' %>
   <% end %>
 
-<h1>Editing Audition</h1>
+<div class="aud-edit-container">
+	<h1>Editing Audition</h1>
 
-<%= render 'form', audition: @audition %>
+	<%= render 'form', audition: @audition %>
 
-<%= link_to 'Show', @audition %> |
-<%= link_to 'Back', auditions_path %>
+	<%= link_to 'Show', @audition %> |
+	<%= link_to 'Back', auditions_role_url(:role_id => @role_id, :char_name => @char_name, :project_id => @project_id) %>
+
+</div>

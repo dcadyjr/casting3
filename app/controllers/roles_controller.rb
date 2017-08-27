@@ -74,7 +74,7 @@ class RolesController < ApplicationController
     session[:return_to] ||= request.referer # for redirecting back to the same page upon delete from project page.
 
     respond_to do |format|
-      format.html { redirect_to session.delete(:return_to), notice: 'Role was successfully destroyed.' }
+      format.html { redirect_to session.delete(:return_to), notice: 'Role was successfully deleted.' }
       format.json { head :no_content }
     end
   end
