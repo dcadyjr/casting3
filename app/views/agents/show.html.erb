@@ -1,11 +1,13 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <%= @agent.first_name %><%= @agent.last_name %>
-</p>
+<div class="agent-show">
+	<p id="notice"><%= notice %></p>
 
-<%= link_to 'Create Project', new_project_path %>
+	<p>
+	  <%= @agent.first_name %><%= @agent.last_name %>
+	</p>
 
-<%= link_to 'Edit', edit_agent_path(@agent) %>
-<%= link_to 'Back', agents_path %>
-<%= link_to 'Log out', agents_logout_path, method: :delete %>
+	<%= link_to 'Projects Page', projects_path %>
+	<%= link_to 'Edit', edit_agent_path(@agent) %>
+	<%= link_to 'Log out', agents_logout_path, method: :delete %>
+
+</div>

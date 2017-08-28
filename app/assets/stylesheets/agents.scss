@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 ///index.html
+
 #container{
 	display: flex;
 	flex: row;
@@ -18,5 +19,15 @@
 
 }
 h1{
+	margin-left: 10%;
+}
+
+
+.agent-reg{
+	margin-left: 10%;
+
+}
+
+.agent-show{
 	margin-left: 10%;
 }
