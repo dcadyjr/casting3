@@ -23,7 +23,7 @@
           <td><%= audition.time %></td>
           <td><%= audition.actor[:first_name] + " " + audition.actor[:last_name]%></td>
           <td><%= audition.role[:char_name] %></td>
-          <td><%= image_tag audition.actor.image_url, size: "125x100" %></td>
+          <td class="image-td"><%= image_tag audition.actor.image_url, :width => "100%" %></td>
           <td><%= link_to 'Show', audition %></td>
           <td><%= link_to 'Edit', edit_audition_path(audition) %></td>
           <td><%= link_to 'Delete', audition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
