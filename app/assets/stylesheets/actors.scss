@@ -23,6 +23,11 @@ body {
 
 }
 
+#logo{
+	margin-left: 10%;
+	font: 100% $font-stack;
+
+}
 .production-img{
 
 }
@@ -42,10 +47,25 @@ body {
 }
 
 span{
+	font: 100% $font-stack;
 	padding: 10px;
 }
+.intro-container{
+	width: 400px;
+	margin-left: 10%
+}
 
-// new.html.erb
+//new.html.erb
+.reg-text{
+	margin-left: 10%
+}
+.reg-links{
+	margin-left: 10%
+}
+
+	
+
+// _form.html.erb
 
 .reg-wrapper{
 	display: flex;
@@ -71,9 +91,10 @@ span{
 .appearance{
 	order: 3;
 	margin: $div-margin;
-
 }
-
+.actions{
+	margin-left: 20%
+}
 // show.html.erb
 
 .show-wrapper{
@@ -119,6 +140,10 @@ span{
   }
 }
 
+.show-links{
+	margin-left: 10%;
+}
+
 h1{
 	padding: 10px;
 }
@@ -126,7 +151,9 @@ h1{
 	margin-top: 55px;
 }
 
-
+.edit-link{
+	margin-left: 10%;
+}
 
 
 

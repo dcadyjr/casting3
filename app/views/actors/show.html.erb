@@ -4,8 +4,7 @@
 
   <div class="image">
     <p>
-      
-      <%= image_tag @actor.image_url, size: "425x350" %>
+      <%= image_tag @actor.image_url, :height => "50%", :width => "50%" %>
     </p>
   </div>
 
@@ -166,7 +165,8 @@
   </div>
 
 </div>
-
-<%= link_to 'Log out', logout_path, method: :delete %> |
-<%= link_to 'Edit', edit_actor_path(@actor) %> 
+<div class='show-links'>
+  <%= link_to 'Log out', logout_path, method: :delete %> |
+  <%= link_to 'Edit', edit_actor_path(@actor) %> 
+</div>
 
