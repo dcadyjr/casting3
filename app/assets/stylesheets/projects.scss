@@ -5,14 +5,14 @@
 
 $font-stack: 'Manuale', serif;
 $primary-color: black;
-$div-margin: 350px;
+$div-margin: 25%;
 
 
 // show.html.erb
 
 
 .project-wrapper {
-	margin: 0 auto;
+	margin-left: 40%;
 	width: 600px;
   display: flex;
   flex: row;
@@ -66,7 +66,3 @@ h1{
   margin-left: $div-margin;
 }
 
-//show.html.erb
-.role-show-container{
-  margin-left: $div-margin;
-}
